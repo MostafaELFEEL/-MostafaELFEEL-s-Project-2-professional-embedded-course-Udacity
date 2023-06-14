@@ -43,3 +43,28 @@ The system operates in two modes: Normal mode and Pedestrian mode.
 - The pedestrian's Green LED remains on while the cars' Red LED turns off, and the cars' Green LED turns on.
 - The traffic lights signals then return to the Normal mode, repeating the cycle.
 
+## Explanation video:
+
+https://youtu.be/iUl60bDeCck
+
+### Here are the user stories or test cases for the project:
+
+## User Story 1:
+As a pedestrian, when I make a short press on the crosswalk button while the cars' green light is on and pedestrian red light is off, I expect to wait for the yellow lights to blink for five seconds. Then, the cars' red light and pedestrian green light should turn on for five seconds, allowing me to safely cross the street.
+
+## User Story 2:
+As a pedestrian, when I make a short press on the crosswalk button while the cars' yellow light is blinking and pedestrian red light is on, I expect to wait for all yellow lights to blink for five seconds. Then, the cars' red light and pedestrian green light should turn on for five seconds, indicating that it's safe for me to cross the street.
+
+## User Story 3:
+As a pedestrian, when I make a short press on the crosswalk button while the cars' red light is on and pedestrian green light is on, I don't expect any changes to occur. The current signal state should remain as it is.
+
+## User Story 4:
+As a pedestrian, when I make a long press on the crosswalk button, I don't expect any action to be taken. The system should disregard long presses and not trigger any signal changes.
+
+## User Story 5:
+As a pedestrian, when I make a double press on the crosswalk button, I expect that the first press triggers the appropriate action. However, the second press should have no effect. The system should only respond to the first press and ignore any subsequent presses within a short duration.
+
+## Stories test videos:
+
+https://www.youtube.com/watch?v=6xJXrGYFchE
+
