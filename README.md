@@ -5,10 +5,6 @@
 ## Description:
 A traffic light system with an on-demand crosswalk button has been implemented. The purpose of the crosswalk button is to inform the traffic signal operations that a pedestrian intends to cross the street. As a result, the traffic light adjusts its operations, allowing sufficient time for the pedestrian to safely cross.
 
-Traffic lights are vital signaling devices installed at road intersections, pedestrian crossings, and various locations to regulate the flow of traffic. Typically, traffic lights consist of three signals arranged vertically or horizontally in the order of red, yellow, and green. These signals convey specific meanings to drivers and riders through colors and additional symbols such as arrows and bicycles.
-
-While the international standardization of traffic light colors is widespread, variations may exist on national and local levels concerning traffic light sequences and associated laws.
-
 ## The project can be divided into four main tasks:
 
 ### 1-System Design:
