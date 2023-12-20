@@ -1,76 +1,77 @@
-# -MostafaELFEEL-s-Project-2-professional-embedded-course-Udacity
-### This project is about On-demand Traffic light control using AVR ATMEGA32.
+# MostafaELFEEL's Project 2: Professional Embedded Course on Udacity
 
+## Project Overview
+This project showcases an on-demand traffic light control system built using AVR ATMEGA32. The system integrates a pedestrian crosswalk button to ensure safe pedestrian crossings.
 
-## Description:
-A traffic light system with an on-demand crosswalk button has been implemented. The purpose of the crosswalk button is to inform the traffic signal operations that a pedestrian intends to cross the street. As a result, the traffic light adjusts its operations, allowing sufficient time for the pedestrian to safely cross.
+---
 
-## The project can be divided into four main tasks:
+## System Components
 
-### 1-System Design:
-- Create a comprehensive static architecture for the system.
-- Establish the necessary groundwork for system development.
-### 2-Development Environment Preparation:
-- Apply a layered architecture to organize the project's folder structure.
-- Set up the development environment for smooth execution.
-### 3-Application:
-- Implement the required drivers for the system.
-- Conduct thorough testing of the drivers to ensure proper functionality.
-- Implement the overall system flow, incorporating the drivers.
-![image](https://github.com/MostafaELFEEL/-MostafaELFEEL-s-Project-2-professional-embedded-course-Udacity/assets/106331831/6dbc5f9f-a9a8-4364-8687-4282da941118)
-### 4-Testing:
-- Test five user stories to verify the system's behavior and effectiveness.
-### Stories test videos:
-https://www.youtube.com/watch?v=6xJXrGYFchE
-## Hardware:
-- Utilize the ATmega32 microcontroller as the core hardware component.
-- Connect a push button to either the INT0, INT1, or INT2 pin to serve as the pedestrian button.
-- Incorporate three LEDs for cars (Green, Yellow, and Red) to indicate traffic signals for vehicles.
-- Utilize three LEDs for pedestrians (Green, Yellow, and Red) to indicate pedestrian crossing signals.
+### Hardware:
+- **Core Component:** ATmega32 microcontroller
+- **Pedestrian Button:** Connected to INT0, INT1, or INT2 pin
+- **Traffic Signal LEDs:**
+  - Cars: Green, Yellow, Red
+  - Pedestrians: Green, Yellow, Red
 
-![image](https://github.com/MostafaELFEEL/-MostafaELFEEL-s-Project-2-professional-embedded-course-Udacity/assets/106331831/909cda95-418d-46e8-8d7f-9d2f31df9d95)
+![Hardware Setup](https://github.com/MostafaELFEEL/-MostafaELFEEL-s-Project-2-professional-embedded-course-Udacity/assets/106331831/909cda95-418d-46e8-8d7f-9d2f31df9d95)
 
+---
 
-## Application Logic:
+## System Operation Modes
 
-The system operates in two modes: Normal mode and Pedestrian mode.
-### In Normal mode:
-- The cars' LEDs transition sequentially every five seconds: Green, Yellow, Red, Yellow, Green.
-- The Yellow LED blinks for five seconds before switching to Green or Red LEDs.
-### In Pedestrian mode:
-- Transition from Normal mode to Pedestrian mode upon pressing the pedestrian button.
-- If the button is pressed while the cars' Red LED is on:
-- The pedestrian's Green LED and the cars' Red LEDs remain on for five seconds, allowing pedestrians to cross.
-- If the button is pressed while the cars' Green LED is on or the cars' Yellow LED is blinking:
-- The pedestrian Red LED turns on, followed by both Yellow LEDs blinking for five seconds.
-- Then, the cars' Red LED and pedestrian Green LEDs remain on for five seconds, indicating pedestrians should wait.
-- After the two states mentioned above, the cars' Red LED turns off, and both Yellow LEDs begin blinking for five seconds.
-- The pedestrian's Green LED remains on while the cars' Red LED turns off, and the cars' Green LED turns on.
-- The traffic lights signals then return to the Normal mode, repeating the cycle.
+### Normal Mode:
+- Sequential transition of car LEDs: Green → Yellow → Red → Yellow → Green
+- Yellow LED blinks for 5 seconds before transitioning
 
-![image](https://github.com/MostafaELFEEL/-MostafaELFEEL-s-Project-2-professional-embedded-course-Udacity/assets/106331831/29f18b4c-5527-42bc-9d71-9eeecbc3e794)
+### Pedestrian Mode:
+- Activated by pressing the pedestrian button
+- Two scenarios based on the state of car LEDs
 
+![Mode Transition](https://github.com/MostafaELFEEL/-MostafaELFEEL-s-Project-2-professional-embedded-course-Udacity/assets/106331831/29f18b4c-5527-42bc-9d71-9eeecbc3e794)
 
-### Explanation video:
+---
 
-https://youtu.be/iUl60bDeCck
-
-## Here are the user stories or test cases for the project:
+## User Stories & Test Cases
 
 ### User Story 1:
-As a pedestrian, when I make a short press on the crosswalk button while the cars' green light is on and pedestrian red light is off, I expect to wait for the yellow lights to blink for five seconds. Then, the cars' red light and pedestrian green light should turn on for five seconds, allowing me to safely cross the street.
+- Pedestrian presses during car green light: Wait for yellow lights → Safe to cross
 
 ### User Story 2:
-As a pedestrian, when I make a short press on the crosswalk button while the cars' yellow light is blinking and pedestrian red light is on, I expect to wait for all yellow lights to blink for five seconds. Then, the cars' red light and pedestrian green light should turn on for five seconds, indicating that it's safe for me to cross the street.
+- Pedestrian presses during blinking yellow: Wait for all yellow lights → Safe to cross
 
 ### User Story 3:
-As a pedestrian, when I make a short press on the crosswalk button while the cars' red light is on and pedestrian green light is on, I don't expect any changes to occur. The current signal state should remain as it is.
+- Pedestrian presses during car and pedestrian green: No changes
 
 ### User Story 4:
-As a pedestrian, when I make a long press on the crosswalk button, I don't expect any action to be taken. The system should disregard long presses and not trigger any signal changes.
+- Long press on pedestrian button: No action, ignored
 
 ### User Story 5:
-As a pedestrian, when I make a double press on the crosswalk button, I expect that the first press triggers the appropriate action. However, the second press should have no effect. The system should only respond to the first press and ignore any subsequent presses within a short duration.
+- Double press on pedestrian button: First press triggers action, second press ignored
 
+---
 
+## Implementation Details
 
+### 1. System Design:
+- Static architecture creation
+- Initial groundwork setup
+
+### 2. Development Environment:
+- Layered architecture for project organization
+- Environment setup for smooth execution
+
+### 3. Application:
+- Driver implementation and testing
+- System flow integration
+
+### 4. Testing:
+- Verification of system behavior through user stories
+
+![System Flow](https://github.com/MostafaELFEEL/-MostafaELFEEL-s-Project-2-professional-embedded-course-Udacity/assets/106331831/6dbc5f9f-a9a8-4364-8687-4282da941118)
+
+---
+
+## Additional Resources
+- [Test Videos](https://www.youtube.com/watch?v=6xJXrGYFchE)
+- [Explanation Video](https://youtu.be/iUl60bDeCck)
