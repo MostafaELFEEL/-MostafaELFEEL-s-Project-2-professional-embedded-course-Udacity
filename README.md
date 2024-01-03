@@ -1,4 +1,4 @@
-# MostafaELFEEL's Project 2: Professional Embedded Course on Udacity
+# Project 2: Professional Embedded Course on Udacity
 
 ## Project Overview
 This project showcases an on-demand traffic light control system built using AVR ATMEGA32. The system integrates a pedestrian crosswalk button to ensure safe pedestrian crossings.
